@@ -6,14 +6,13 @@
 .org ProgStart - 2
 .db t2ByteTok, tAsmCmp
 
-	b_call(_homeup)
-	ld hl, 0
-	ld (curCol), hl
-	ld hl, msg
-	b_call(_PutS)
-	b_call(_NewLine)
+	ld HL, $1F1A
+	ld (PenCol), HL
+	ld HL, msg
+	b_call(_VPutS)
 	ret
 
 msg:
-	.db "Hello world!", 0
+	.db "Hello,   world!", 0
+
 .end
