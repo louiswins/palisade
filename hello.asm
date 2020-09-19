@@ -1,3 +1,4 @@
+.binarymode TI8X
 .nolist
 #include "ti83plus.inc"
 #define ProgStart $9D95
@@ -5,7 +6,7 @@
 .org ProgStart - 2
 .db t2ByteTok, tAsmCmp
 
-	b_call(_ClrLCDFull)
+	b_call(_homeup)
 	ld hl, 0
 	ld (curCol), hl
 	ld hl, msg
